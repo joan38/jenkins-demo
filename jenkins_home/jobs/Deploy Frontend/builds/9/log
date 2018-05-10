@@ -1,0 +1,69 @@
+Started by user [8mha:////4HXYD0K40TV+9H6GAlTd/9Ub/apmGvTJnSyPPBRJmmxgAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgYu/dLi1CL9rPzEPAC4SrRyvwAAAA==[0mJoan Goyeau
+Running in Durability level: MAX_SURVIVABILITY
+Loading library pipeline@master
+Attempting to resolve master from remote references...
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git ls-remote -h -t https://github.com/joan38/jenkins-demo.git # timeout=10
+Found match: refs/heads/master revision 493848483687ff2475d36c8d9e45c26a3ef6d09b
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/joan38/jenkins-demo.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/joan38/jenkins-demo.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --no-tags --progress https://github.com/joan38/jenkins-demo.git +refs/heads/*:refs/remotes/origin/*
+Checking out Revision 493848483687ff2475d36c8d9e45c26a3ef6d09b (master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 493848483687ff2475d36c8d9e45c26a3ef6d09b
+Commit message: "Initial"
+ > git rev-list --no-walk 7b61b962acb4d1f3445fbae2d048950365d0130a # timeout=10
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+/var/jenkins_home/jobs/Deploy Frontend/builds/9/libs/pipeline/src/com/goyeau/jenkins/demo/pipeline/Deploy.groovy: 5: unable to resolve class CpsScript 
+ @ line 5, column 21.
+       static frontend(CpsScript s, String version, boolean runTests) {
+                       ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:310)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:958)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:605)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:554)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:254)
+	at groovy.lang.GroovyClassLoader.recompile(GroovyClassLoader.java:761)
+	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:718)
+	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:787)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:411)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell$TimingLoader.loadClass(CpsGroovyShell.java:158)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:411)
+	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:677)
+	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:545)
+	at org.codehaus.groovy.control.ClassNodeResolver.tryAsLoaderClassOrScript(ClassNodeResolver.java:185)
+Caused: BUG! exception in phase 'semantic analysis' in source unit 'WorkflowScript' The lookup for com.goyeau.jenkins.demo.pipeline.Deploy caused a failed compilaton. There should not have been any compilation from this call.
+	at org.codehaus.groovy.control.ClassNodeResolver.tryAsLoaderClassOrScript(ClassNodeResolver.java:190)
+	at org.codehaus.groovy.control.ClassNodeResolver.findClassNode(ClassNodeResolver.java:170)
+	at org.codehaus.groovy.control.ClassNodeResolver.resolveName(ClassNodeResolver.java:126)
+	at org.codehaus.groovy.control.ResolveVisitor.resolveToOuter(ResolveVisitor.java:676)
+	at org.codehaus.groovy.control.ResolveVisitor.resolve(ResolveVisitor.java:313)
+	at org.codehaus.groovy.control.ResolveVisitor.visitClass(ResolveVisitor.java:1236)
+	at org.codehaus.groovy.control.ResolveVisitor.startResolving(ResolveVisitor.java:176)
+	at org.codehaus.groovy.control.CompilationUnit$12.call(CompilationUnit.java:663)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:943)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:605)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:554)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
+	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:688)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:700)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:131)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:125)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:560)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:521)
+	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:325)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:429)
+Finished: FAILURE

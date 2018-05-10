@@ -1,0 +1,11 @@
+*.swp
+
+# Idea
+.idea
+*.iml
+
+# SBT
+target/
+
+# MacOS
+.DS_Store

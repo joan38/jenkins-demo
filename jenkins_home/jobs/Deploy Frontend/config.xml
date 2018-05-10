@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><flow-definition>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>GitRef</name>
+                    <defaultValue>master</defaultValue>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.BooleanParameterDefinition>
+                    <name>RunTests</name>
+                    <defaultValue>true</defaultValue>
+                </hudson.model.BooleanParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+    </properties>
+    <triggers/>
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition">
+        <script>import com.goyeau.jenkins.demo.pipeline.Deploy
+
+Deploy.frontend(this, GitRef, RunTests.toBoolean())
+</script>
+        <sandbox>true</sandbox>
+    </definition>
+</flow-definition>

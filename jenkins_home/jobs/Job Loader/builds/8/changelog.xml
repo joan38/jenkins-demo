@@ -1,0 +1,13 @@
+commit f0cf9dfec9ce89810eabd7bb61d084c803a97746
+tree 518f0d5dd15e954d366ac61e66c51830dacdfb9b
+parent 
+author Joan Goyeau <joan@goyeau.com> 2018-05-10 15:00:56 +0100
+committer Joan Goyeau <joan@goyeau.com> 2018-05-10 15:09:41 +0100
+
+    Initial
+
+
+
+:000000 100644 0000000000000000000000000000000000000000 9fc56cd2cc70191ae5ecf977ba9c8cdb39e4e23f A	.gitignore
+:000000 100644 0000000000000000000000000000000000000000 58f85393b7378ee1a831111d92eddbd09c20e286 A	src/com/goyeau/jenkins/demo/jobs/DeployFrontend.groovy
+:000000 100644 0000000000000000000000000000000000000000 556cc824fbfe301423ceda4d4d419b86959cd760 A	src/com/goyeau/jenkins/demo/pipeline/DeployFrontend.groovy

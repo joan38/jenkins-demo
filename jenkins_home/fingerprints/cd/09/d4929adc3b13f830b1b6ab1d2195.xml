@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2018-05-10 14:01:18.283 UTC</timestamp>
+  <md5sum>cd09d4929adc3b13f830b1b6ab1d2195</md5sum>
+  <fileName>Credential id=6ee4afdc-6c56-4649-a669-ad8e648725c1 name=joan38/******</fileName>
+  <usages>
+    <entry>
+      <string>Job Loader</string>
+      <ranges>2-12</ranges>
+    </entry>
+    <entry>
+      <string>Deploy Frontend</string>
+      <ranges>2-13</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
